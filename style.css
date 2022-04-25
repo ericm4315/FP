@@ -1,0 +1,62 @@
+h1 {
+    font-family: 'Abel', sans-serif;
+    text-align: center;
+    margin-top: 20%;
+}
+canvas {
+display: block;
+margin-top: 300px;
+/*width: 60%;*/
+margin-left: auto;
+margin-right: auto;
+}
+
+.centeredinput {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    left: 32%;
+
+}
+
+/*.centeredsubmit {*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*    position: relative;*/
+/*    left: 46%;*/
+/*}*/
+
+.without-headers {
+    display: none;
+
+}
+
+.buttonthing {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: blue;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  left: 44%;
+}
+.buttonthing:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+input[type=text] {
+  border: 2px solid black;
+  border-radius: 2px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  /*box-sizing: border-box;*/
+}
