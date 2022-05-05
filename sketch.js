@@ -16,6 +16,7 @@ function preload(){
 function setup() {
   createCanvas(640, 420);
   arrow = loadImage('58f8bcf70ed2bdaf7c128307.png')
+  document.querySelector('h2').style.display = "none";
 
   // objectDetector = ml5.objectDetector('cocossd', modelReady);
 document.querySelector("button").addEventListener("click", function(){
@@ -50,6 +51,11 @@ function gotResult(err, results) {
     console.log(err);
     createNewH1("This picture does not seem to work... This could be because the image link is not supported or is because of the CORS Policy.")
     noCanvas()
+    document.querySelector('h2').style.display = "none"
+  }
+
+  else {
+    document.querySelector('h2').style.display = "block";
   }
 
   var species = results[0].label
@@ -126,6 +132,13 @@ function draw() {
 
 function createNewH1(text) {
   var createEle = document.createElement("H1");
+  var eleInput = document.createTextNode(text);
+  createEle.appendChild(eleInput);
+  document.body.appendChild(createEle)
+}
+
+function createNewH2(text) {
+  var createEle = document.createElement("H2");
   var eleInput = document.createTextNode(text);
   createEle.appendChild(eleInput);
   document.body.appendChild(createEle)
