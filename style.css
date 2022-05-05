@@ -1,11 +1,11 @@
 h1 {
     font-family: 'Abel', sans-serif;
     text-align: center;
-    margin-top: 20%;
+    /*margin-top: 20%;*/
 }
 canvas {
 display: block;
-margin-top: 300px;
+margin-top: 200px;
 /*width: 60%;*/
 margin-left: auto;
 margin-right: auto;
@@ -18,6 +18,11 @@ margin-right: auto;
     left: 32%;
 
 }
+
+.firstText{
+  margin-top:20%;
+}
+
 
 /*.centeredsubmit {*/
 /*    margin-left: auto;*/

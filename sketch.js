@@ -6,6 +6,7 @@ let objectDetector;
 let img;
 let objects = [];
 let status;
+let arrow;
 
 function preload(){
   // img = loadImage(linkTo);
@@ -14,6 +15,7 @@ function preload(){
 
 function setup() {
   createCanvas(640, 420);
+  arrow = loadImage('58f8bcf70ed2bdaf7c128307.png')
 
   // objectDetector = ml5.objectDetector('cocossd', modelReady);
 document.querySelector("button").addEventListener("click", function(){
@@ -42,9 +44,14 @@ function modelReady() {
 
 // A function to run when we get any errors and the results
 function gotResult(err, results) {
+
+  // image(arrow, width/2-20, height, 30,30)
   if (err) {
     console.log(err);
+    createNewH1("This picture does not seem to work... This could be because the image link is not supported or is because of the CORS Policy.")
+    noCanvas()
   }
+
   var species = results[0].label
   console.log(results)
   objects = results;
