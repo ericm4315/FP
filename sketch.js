@@ -16,17 +16,15 @@ function preload(){
 function setup() {
   createCanvas(640, 420);
   arrow = loadImage('58f8bcf70ed2bdaf7c128307.png')
-  document.querySelector('h2').style.display = "none";
+  document.querySelector('h2').style.display = "none"; // hides an h2 element
 
   // objectDetector = ml5.objectDetector('cocossd', modelReady);
 document.querySelector("button").addEventListener("click", function(){
 
 // linkTo = document.querySelector("#link").value
 linkTo = prompt("Enter in a link to an image (Not all image links work)")
-// linkTo.crossOrigin = "Anonymous"
 
 
-// console.log(document.querySelector("#link").value)
 
 img = loadImage(linkTo)
 objectDetector = ml5.objectDetector('cocossd', modelReady);
@@ -46,21 +44,24 @@ function modelReady() {
 // A function to run when we get any errors and the results
 function gotResult(err, results) {
 
-  // image(arrow, width/2-20, height, 30,30)
   if (err) {
     console.log(err);
-    createNewH1("This picture does not seem to work... This could be because the image link is not supported or is because of the CORS Policy.")
+    createNewH2("This picture does not seem to work... This could be because the image link is not supported or is because of the CORS Policy.")
     noCanvas()
     document.querySelector('h2').style.display = "none"
   }
 
   else {
-    document.querySelector('h2').style.display = "block";
+    document.querySelector('h2').style.display = "block"; // Displays a red h2 element.
+
   }
+  document.querySelector('button').style.display = "none" // removes the button after user inputs a link
 
   var species = results[0].label
   console.log(results)
   objects = results;
+  
+  // Creates different texts depending on what ml5 detects
     if(species == 'dog') {
       console.log("this is a dog")
       createNewH1("This seems to be a dog... Want some kibble?")
